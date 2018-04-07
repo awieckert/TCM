@@ -10,7 +10,7 @@ body {
     margin-top: 25px;
 }
 
-#challenge-button {
+#challenge-button-div {
     margin-top: 40px;
 }
 
@@ -38,4 +38,9 @@ body {
 
 #winner {
     margin: auto;
+}
+
+.player-badge img {
+    height: 40px;
+    width: 40px;
 }
