@@ -39,3 +39,8 @@ body {
 #winner {
     margin: auto;
 }
+
+.player-badge img {
+    height: 40px;
+    width: 40px;
+}
