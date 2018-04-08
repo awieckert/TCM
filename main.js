@@ -14,14 +14,16 @@ const buttonEventListeners = () => {
 }
 
 const comparePlayers = (player1JSON, player2JSON) => {
+    console.log("PLayer1JSON: ", player1JSON);
+    console.log('player2JSON: ', player2JSON);
     let stringToPrint = "";
     let secondStringToPrint = "";
     let thirdStringToPrint = "";
-    stringToPrint += `<div class="player1-image col-md-4 col-md-offset-1">`;
+    stringToPrint += `<div class="player1-image col-md-4 col-md-offset-2">`;
     stringToPrint += `<img src="${player1JSON.gravatar_url}" alt="">`;
-    stringToPrint += `<h2>${player2JSON.points.total}</h2>`;
+    stringToPrint += `<h2>${player1JSON.points.total}</h2>`;
     stringToPrint += `</div>`;
-    stringToPrint += `<div class="player2-image col-md-4 col-md-offset-1">`;
+    stringToPrint += `<div class="player2-image col-md-4 col-md-offset-4">`;
     stringToPrint += `<img src="${player2JSON.gravatar_url}" alt="">`;
     stringToPrint += `<h2>${player2JSON.points.total}</h2>`;
     stringToPrint += `</div>`;
@@ -33,7 +35,7 @@ const comparePlayers = (player1JSON, player2JSON) => {
         secondStringToPrint += `<div class="row">`;
         secondStringToPrint += `<div id="winner-badges" class="col-md-12">`;
         player1JSON.badges.forEach((badge, index) => {
-            thirdStringToPrint += `<div id="badge${index}" class="player-badge">`;
+            thirdStringToPrint += `<div id="badge${index}" class="col-md-1 player-badge awesome-animation spin">`;
             thirdStringToPrint += `<img src="${badge.icon_url}">`
             thirdStringToPrint += `</div>`;
         });
@@ -49,7 +51,7 @@ const comparePlayers = (player1JSON, player2JSON) => {
         secondStringToPrint += `<div class="row">`;
         secondStringToPrint += `<div id="winner-badges" class="col-md-12">`;
         player2JSON.badges.forEach((badge, index) => {
-            thirdStringToPrint += `<div id="badge${index}" class="player-badge">`;
+            thirdStringToPrint += `<div id="badge${index}" class="col-md-1 player-badge awesome-animation spin">`;
             thirdStringToPrint += `<img src="${badge.icon_url}">`
             thirdStringToPrint += `</div>`;
         });
@@ -60,11 +62,11 @@ const comparePlayers = (player1JSON, player2JSON) => {
     }
 }
 
-const WTF = () => {
+function WTF () {
     console.log("FUCK! Everything Broke!");
 }
 
-const player2XHR = (player1JSON) => {
+const player2XHR = (player1data) => {
     const player2name = document.getElementById('player2').value;
     console.log("Player 2 input: ", player2name);
     const player2URL = `https://teamtreehouse.com/${player2name}.json`;
@@ -74,14 +76,16 @@ const player2XHR = (player1JSON) => {
     myRequest.open('GET', player2URL);
     myRequest.send();
 
-    function multiplePlayerStuff (player1JSON) {
-        player2JSON = JSON.parse(this.responseText);
-        comparePlayers(player1JSON, player2JSON);
+    function multiplePlayerStuff () {
+        let player2JSON = JSON.parse(this.responseText);
+        // let players1JSON = player1Stuff;
+        comparePlayers(player1data, player2JSON);
     }
 }
 
-const getPlayer1JSON = () => {
+function getPlayer1JSON () {
     const player1JSON = JSON.parse(this.responseText);
+    console.log(player1JSON);
     player2XHR(player1JSON);
 }
 
