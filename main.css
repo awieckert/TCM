@@ -3,7 +3,19 @@
 }
 
 body {
-    background-color: cornsilk;
+    /* background-color: cornsilk; */
+    background-image: url(./img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: rgb(237, 7, 7);
+}
+
+h2 {
+    color: rgb(163, 8, 39);
 }
 
 #challenger-container {
@@ -16,8 +28,8 @@ body {
 
 .player1-image {
     margin-top: 45px;
-    height: 600px;
-    width: 600px;
+    height: 350px;
+    width: 350px;
 }
 
 .player1-image img {
@@ -27,8 +39,8 @@ body {
 
 .player2-image {
     margin-top: 45px;
-    height: 600px;
-    width: 600px;
+    height: 350px;
+    width: 350px;
 }
 
 .player2-image img {
@@ -41,6 +53,32 @@ body {
 }
 
 .player-badge img {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
 }
+
+.player-badge {
+    padding-top: 15px;
+}
+
+.awesome-animation {
+    /* animation-delay: 10s; */
+    animation-duration: 6s;
+    animation-name: fadein;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.spin:hover {
+    animation:spin 1s linear;
+}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
