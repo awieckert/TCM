@@ -30,6 +30,7 @@ h2 {
     margin-top: 45px;
     height: 350px;
     width: 350px;
+    /* margin-left: 50px; */
 }
 
 .player1-image img {
@@ -41,6 +42,7 @@ h2 {
     margin-top: 45px;
     height: 350px;
     width: 350px;
+    margin-left: 300px;
 }
 
 .player2-image img {

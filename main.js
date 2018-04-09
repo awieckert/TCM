@@ -23,7 +23,7 @@ const comparePlayers = (player1JSON, player2JSON) => {
     stringToPrint += `<img src="${player1JSON.gravatar_url}" alt="">`;
     stringToPrint += `<h2>${player1JSON.points.total}</h2>`;
     stringToPrint += `</div>`;
-    stringToPrint += `<div class="player2-image col-md-4 col-md-offset-4">`;
+    stringToPrint += `<div class="player2-image col-md-4 col-md-offset-2">`;
     stringToPrint += `<img src="${player2JSON.gravatar_url}" alt="">`;
     stringToPrint += `<h2>${player2JSON.points.total}</h2>`;
     stringToPrint += `</div>`;
